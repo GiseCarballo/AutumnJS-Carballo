@@ -1,0 +1,155 @@
+* {
+    Margin: 0;
+    padding: 0;
+  }
+
+  /* --------------------------------- NAV --------------------------------- */
+
+  header{
+     width: 100%;
+    z-index: 1000;
+    box-shadow: 0 3px 3px rgb(0 0 0 / 5%);
+}
+
+  ul{
+      display:flex;
+      justify-content: end;
+  }
+  
+  .navbar-nav{
+      display: flex;
+      padding-left: 100%;
+      align-items: center;
+      margin-left: 2rem;
+  }
+
+/* -- */
+
+  .navbar {
+    background: rgb(222, 222, 222);
+    background: linear-gradient(0deg, rgb(222, 222, 222) 0%, rgb(242, 242, 242) 100%);
+  }
+  
+  .logo {
+    z-index: 1000;
+    padding-top: none;
+    position: relative;
+    width: 55px;
+    height: auto;
+  }
+
+  .dropdown-menu {
+    background-color: rgb(233, 233, 233);
+  }
+  
+  .nav-link {
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    color: #333333;
+    font-size: 1em;
+    text-decoration: none;
+  }
+  .nav-link:hover {
+    background-color: #Ec686c;
+    color: #333333;
+    font-weight: 800;
+  }
+  
+  .nav-item i:hover {
+    color: #333333;
+  }
+  
+  .icono {
+    color: #Ec686c;
+    font-size: 1.5em;
+  }
+  
+  #active {
+    color: #Ec686c;
+  }
+  
+  .menu {
+    justify-content: end;
+  }
+  
+  .justify-content-end {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .nav-link {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+
+  /* --------------------------------- aquí habrá un calendario --------------------------------- */
+
+  article{
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  /* --------------------------------- FOOTER --------------------------------- */
+
+.contenedor-footer {
+    color: white;
+    background: rgb(27, 95, 126);
+    background: linear-gradient(0deg, rgb(27, 95, 126) 0%, rgb(34, 118, 157) 100%);
+    font-family: "Montserrat", sans-serif;
+    padding: 10px 30px 10px 40px;
+    border-radius: 0px 90px 0px 90px;
+    font-size: 1em;
+    display: grid;
+  }
+  
+  .contenedorPuzzle {
+    color: #09ccda;
+    grid-template-areas: puzzle;
+    font-size: 3em;
+  }
+  
+  .puzzle {
+    text-align: center;
+  }
+  
+  .contenedorDatos {
+    width: 80%;
+    grid-area: texto1;
+  }
+  
+  .contenedorInfo {
+    width: 80%;
+    grid-area: texto2;
+  }
+  
+  .copyright {
+    grid-area: derechos;
+    text-align: end;
+  }
+
+   /*--------------------------------------------*/
+  
+   .contenedor-footer{
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas: "puzzle texto1 texto2" "derechos derechos derechos";
+  }
+  
+  .contenedorPuzzle {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .contenedorDatos {
+   margin-top: 20px;
+  }
+  
+  .contenedorInfo {
+    margin-top: 20px;
+  }
+  
+  .copyright{
+     text-align:center;
+     width: 100%;
+  }
