@@ -1,0 +1,301 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* --------------------------------- NAV --------------------------------- */
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
+  grid-area: header;
+}
+
+ul {
+  display: flex;
+  justify-content: end;
+}
+
+.navbar-nav {
+  display: flex;
+  padding-left: 100%;
+  align-items: center;
+  margin-left: 2rem;
+}
+
+/* -- */
+.navbar {
+  background: rgb(222, 222, 222);
+  background: linear-gradient(0deg, rgb(222, 222, 222) 0%, rgb(242, 242, 242) 100%);
+}
+
+.logo {
+  z-index: 1000;
+  padding-top: none;
+  position: relative;
+  width: 55px;
+  height: auto;
+}
+
+.dropdown-menu {
+  background-color: rgb(233, 233, 233);
+}
+
+.nav-link {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  color: #333333;
+  font-size: 1em;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background-color: #Ec686c;
+  color: #333333;
+  font-weight: 800;
+}
+
+.nav-item i:hover {
+  color: #333333;
+}
+
+.icono {
+  color: #Ec686c;
+  font-size: 1.5em;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+#active {
+  color: #Ec686c;
+}
+
+.menu {
+  justify-content: end;
+}
+
+.justify-content-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-link {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+/* --------------------------------- FOOTER --------------------------------- */
+.contenedor-footer {
+  color: white;
+  background: rgb(27, 95, 126);
+  background: linear-gradient(0deg, rgb(27, 95, 126) 0%, rgb(34, 118, 157) 100%);
+  font-family: "Montserrat", sans-serif;
+  padding: 10px 30px 10px 40px;
+  border-radius: 0px 90px 0px 0px;
+  font-size: 1em;
+  display: grid;
+  margin-top: 13%;
+  grid-area: footer;
+}
+
+.contenedorPuzzle {
+  color: #09ccda;
+  grid-template-areas: puzzle;
+  font-size: 3em;
+}
+
+.puzzle {
+  text-align: center;
+}
+
+.contenedorDatos {
+  width: 80%;
+  grid-area: texto1;
+}
+
+.contenedorInfo {
+  width: 80%;
+  grid-area: texto2;
+}
+
+.copyright {
+  grid-area: derechos;
+  text-align: end;
+}
+
+/*--------------------------------------------*/
+.contenedor-footer {
+  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-rows: 2fr 1fr;
+  grid-template-areas: "puzzle texto1 texto2" "derechos derechos derechos";
+}
+
+.contenedorPuzzle {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.contenedorDatos {
+  margin-top: 20px;
+}
+
+.contenedorInfo {
+  margin-top: 20px;
+}
+
+.copyright {
+  text-align: center;
+  width: 100%;
+}
+
+/* --------------------------------- LOGIN --------------------------------- */
+.login {
+  grid-area: login;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#user {
+  background-image: url(/assets/Fondo\ Domino.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+article {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.container {
+  position: relative;
+  top: 150px;
+  left: 15%;
+  display: block;
+  margin-bottom: 80px;
+  width: 550px;
+  height: 420px;
+  background: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+h2 {
+  padding: 40px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  color: #414141;
+}
+
+input {
+  display: block;
+  height: 65px;
+  width: 90%;
+  margin: 0 auto;
+  border: none;
+}
+input::-moz-placeholder {
+  transform: translateY(0px);
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+}
+input:-ms-input-placeholder {
+  transform: translateY(0px);
+  -ms-transition: 0.5s;
+  transition: 0.5s;
+}
+input::placeholder {
+  transform: translateY(0px);
+  transition: 0.5s;
+}
+input:hover, input:focus, input:active:focus {
+  color: #ff5722;
+  outline: none;
+  border-bottom: 1px solid #ff5722;
+}
+input:hover::-moz-placeholder, input:focus::-moz-placeholder, input:active:focus::-moz-placeholder {
+  color: #ff5722;
+  position: relative;
+  transform: translateY(-20px);
+}
+input:hover:-ms-input-placeholder, input:focus:-ms-input-placeholder, input:active:focus:-ms-input-placeholder {
+  color: #ff5722;
+  position: relative;
+  transform: translateY(-20px);
+}
+input:hover::placeholder, input:focus::placeholder, input:active:focus::placeholder {
+  color: #ff5722;
+  position: relative;
+  transform: translateY(-20px);
+}
+
+.email,
+.pwd {
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 20px;
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
+  color: #858585;
+  font-weight: lighter;
+  transition: 0.5s;
+}
+
+.link {
+  text-decoration: none;
+  display: inline-block;
+  margin: 30px 15%;
+  text-transform: uppercase;
+  color: #858585;
+  font-weight: lighter;
+  transition: 0.5s;
+}
+
+button {
+  display: inline-block;
+  width: 252px;
+  height: 60px;
+  margin-top: -10px;
+  border: none;
+  font-family: "Manrope";
+  text-transform: uppercase;
+  color: #fff;
+  transition: 0.5s;
+}
+button:nth-of-type(1) {
+  background: #227C9D;
+}
+button:nth-of-type(2) {
+  background: #Ec686c;
+}
+button span {
+  position: absolute;
+  display: block;
+  margin: -10px 13%;
+  transform: translateX(0);
+  transition: 0.5s;
+}
+button:hover span {
+  transform: translateX(15px);
+}
+
+/* ---------------------------------------- CALENDARIO ---------------------------------------- */
+h1 {
+  padding-top: 5%;
+  margin-left: 2%;
+}
+
+/* ------------------------------------------ IMPORT ------------------------------------------*/
+#user {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  row-gap: 2%;
+  grid-template-areas: "header" "login" "footer";
+}/*# sourceMappingURL=stile.css.map */

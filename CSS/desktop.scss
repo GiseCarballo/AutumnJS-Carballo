@@ -1,0 +1,8 @@
+#user{
+    width: 100%;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    row-gap: 2%;
+    grid-template-areas: "header" "login" "footer";
+ }
