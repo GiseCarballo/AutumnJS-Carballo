@@ -1,7 +1,12 @@
+//Todo el codigo de index.html
+
 // Solicitud de Usuario y contraseña para acceder al calendario
 
-let email = document.getElementByID("email");
-let contrasenia = document.getElementByID("pass");
+let email = document.getElementByID("email").value;
+let contrasenia = document.getElementByID("pass").value;
+
+console.log("email")
+console.log("contrasenia")
 
 {
 let signin = document.getElementByID("signin");
