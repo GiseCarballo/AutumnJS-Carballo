@@ -2,27 +2,24 @@
 
 // Solicitud de Usuario y contraseña para acceder al calendario
 
-let email = document.getElementByID("email").value;
-let contrasenia = document.getElementByID("pass").value;
+let email = document.getElementById("email");
+let contrasenia = document.getElementById("pass");
+let formulario = document.getElementById("formulario");
 
-console.log("email")
-console.log("contrasenia")
 
-{
-let signin = document.getElementByID("signin");
-
-sigin.addEventListener("click",ingresar => {
+formulario.addEventListener("submit",(e) => {
+    e.preventDefault();
     for(let i=1;i<=3;i++){
-        if (email=="giselacarballo3@gmail.com"&&(contrasenia=="Autumn2020")){
-            // No sé si se puede usar window.location para redirigir desde acá
-        break;
-}else{
-    alert("Usuario y/o contraseña erroneos! Restan "+(3-i)+" intentos.");
-}
-}
+        if (email.value=="giselacarballo3@gmail.com" && contrasenia.value=="Autumn2020"){
+            console.log("OK");
+            window.location.assign("calendario.html");
+            break;
+        }else{
+            alert("Usuario y/o contraseña erroneos! Restan "+(3-i)+" intentos.");
+        }
+    }
 });
 
-}
 
 email.oninput = () => {
     if(isNaN(email.value)){
@@ -33,12 +30,3 @@ email.oninput = () => {
 }
 
 
-let formulario = document.getElementById("formulario");
-formulario.addEventListener("submit",validar);
-
-function validar(e){
-    if((email.value=="")||(contrasenia.value=="")){
-        e.preventDefault();
-        alert("Ingrese datos validos");
-    }
-}

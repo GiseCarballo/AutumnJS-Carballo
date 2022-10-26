@@ -196,6 +196,7 @@ input {
   height: 65px;
   width: 90%;
   margin: 0 auto;
+  text-transform: lowercase;
   border: none;
 }
 input::-moz-placeholder {
@@ -213,22 +214,22 @@ input::placeholder {
   transition: 0.5s;
 }
 input:hover, input:focus, input:active:focus {
-  color: #ff5722;
+  color: #858585;
   outline: none;
-  border-bottom: 1px solid #ff5722;
+  border-bottom: 1px solid #858585;
 }
 input:hover::-moz-placeholder, input:focus::-moz-placeholder, input:active:focus::-moz-placeholder {
-  color: #ff5722;
+  color: #858585;
   position: relative;
   transform: translateY(-20px);
 }
 input:hover:-ms-input-placeholder, input:focus:-ms-input-placeholder, input:active:focus:-ms-input-placeholder {
-  color: #ff5722;
+  color: #858585;
   position: relative;
   transform: translateY(-20px);
 }
 input:hover::placeholder, input:focus::placeholder, input:active:focus::placeholder {
-  color: #ff5722;
+  color: #858585;
   position: relative;
   transform: translateY(-20px);
 }

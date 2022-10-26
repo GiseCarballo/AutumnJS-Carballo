@@ -207,6 +207,7 @@ box-sizing:border-box;
     height:65px;
     width:90%;
     margin:0 auto;
+    text-transform: lowercase;
     border:none;
     &::placeholder{
       -webkit-transform:translateY(0px);
@@ -217,15 +218,14 @@ box-sizing:border-box;
     &:hover,
     &:focus,
     &:active:focus{
-      color:#ff5722;
+      color:#858585;
       outline:none;
-      border-bottom:1px solid #ff5722;
+      border-bottom:1px solid #858585;
       &::placeholder{
-        color:#ff5722;
+        color:#858585;
         position:relative;
         -webkit-transform:translateY(-20px);
         transform:translateY(-20px);
-        
       }
     }
   }
