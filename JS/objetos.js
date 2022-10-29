@@ -1,45 +1,116 @@
 //Arrays
 
-class Juego{
-    constructor(id, nombre, precio, tiempo, tipo){
-        this.id = id;
-        this.nombre = nombre;
-        this.precio = precio;
-        this.tiempo = tiempo;
-        this.tipo = tipo;
-    }
+const juegos = [{
+    id: "b001",
+    nombre: "Bloques",
+    precio: 999,
+    dias: 10,
+    tipo: "Bloques",
+    foto: "/assets/card-bloques.jpg",
+},
+{
+    id: "b002",
+    nombre: "Cajón con 12 cubos",
+    precio: 2500,
+    dias: 15,
+    tipo: "Bloques",
+    foto: "/assets/card-Cajonbloques.jpg",
+},
+{
+    id:"b003",
+    nombre: "Vagón de tren 24 bloques",
+    precio: 3500,
+    dias: 20,
+    tipo: "Bloques",
+    foto: '/assets/card-bloquescolores.jpg'
+},
+{
+    id:"i001",
+    nombre: "Cubo de Ingenio",
+    precio: 1500,
+    dias: 10,
+    tipo: "Ingenio",
+    foto: '/assets/card-cubo.jpg'
+},
+{
+    id: "i002",
+    nombre: "Tangram",
+    precio: 1700,
+    dias: 15,
+    tipo: "Ingenio",
+    foto: "/assets/card-tangram.jpg"
+},
+{
+    id: "i003",
+    nombre: "Dominó",
+    precio: 1300,
+    dias: 10,
+    tipo: "Ingenio",
+    foto: "/assets/card-Dominó.jpg"
+},
+{
+    id: "e001",
+    nombre: "Encastre numérico",
+    precio: 2000,
+    dias: 10,
+    tipo: "Encastre",
+    foto: "/assets/card-numero.jpg",
+},
+{
+    id: "e002",
+    nombre: "Figuras Geométricas",
+    precio: 2500,
+    dias: 15,
+    tipo: "Encastre",
+    foto: "/assets/card-geometrica.jpg",
+},
+{
+    id: "e003",
+    nombre: "Torre de encastre",
+    precio: 2300,
+    dias: 10,
+    tipo: "Encastre",
+    foto: "/assets/card-encastrecuadrado",   
+},
+{
+    id: "j001",
+    nombre: "Locomotora",
+    precio: 3500,
+    dias: 20,
+    tipo: "Juguetes",
+    foto: "/assets/card-Tren.jpg",
+},
+{
+    id: "j002",
+    nombre: "Tractor",
+    precio: 3500,
+    dias: 20,
+    tipo: "Juguetes",
+    foto: "/assets/card-Tractor",
+},
+{
+    id: "j003",
+    nombre: "Avión",
+    precio: 3500,
+    dias: 20, 
+    tipo: "Jueguetes",
 }
-
-// constructor de juegos
-
-const juego0 = new Juego("b001", "Bloques", 999, "10 días", "Bloques");
-const juego1 = new Juego("b002", "Cajón con 12 cubos", 2500, "15 días", "Bloques");
-const juego2 = new Juego("b003", "Vagón de tren 24 bloques", 3500, "20 días", "Bloques");
-const juego3 = new Juego("i001", "Cubo de Ingenio", 1500, "10 días", "Ingenio");
-const juego4 = new Juego("i002", "Tangram", 1700, "15 días", "Ingenio");
-const juego5 = new Juego("i003", "Dominó", 1300, "10 días", "Ingenio");
-const juego6 = new Juego("e001", "Encastre numérico", 2000, "10 días", "Encastre");
-const juego7 = new Juego("e002", "Figuras Geométricas", 2500, "15 días", "Encastre");
-const juego8 = new Juego("e003", "Torre de encastre", 2300, "10 días", "Encastre");
-const juego9 = new Juego("j001", "Locomotora", 3500, "20 días", "Juguetes");
-const juego10 = new Juego("j002", "Tractor", 3500, "20 días", "Juguetes");
-const juego11 = new Juego("j003", "Avión", 3500, "20 días", "Jueguetes");
-
-
+]
 
 console.log(juegos.length);
 
-for (const juego of juegos){
-    console.log(juego.nombre+" "+juego.tiempo)
+
+/*for (const juego of Juego){
+    console.log(Juego.nombre+" "+Juego.tiempo)
 }
 
-const produccionMenor = juegos.filter((juego) => juego.tiempo.includes ('10 días'));
+const produccionMenor = Juego.filter((juego) => Juego.tiempo.includes ('10 días'));
 console.log(produccionMenor);
 
-const produccionMedia = juegos.filter((juego) => juego.tiempo.includes ('15 días'));
+const produccionMedia = Juego.filter((juego) => Juego.tiempo.includes ('15 días'));
 console.log(produccionMedia);
 
-const produccionMayor = juegos.filter((juego) => juego.tiempo.includes ('20 días'));
+const produccionMayor = Juego.filter((juego) => Juego.tiempo.includes ('20 días'));
 console.log(produccionMayor);
 
 
@@ -49,10 +120,4 @@ console.log(produccionMayor);
 let hoy = document.getElementsByClassName("hoy");
 console.log(hoy[0].innerText);
 hoy[0].innerText = new Date().toLocaleDateString();
-
-
-
-//style
-
-let seccion = document.getElementById("calendario");
-seccion.style.background="#FEF9EF";
+*/

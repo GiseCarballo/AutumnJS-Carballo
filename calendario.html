@@ -77,18 +77,18 @@
         <section>
         <article>
           <div>
-            <h1>YA ESTAS A UN PASO MÁS CERCA DE TU PRODUCTO</h1>
-            <h2>Recordá que trabajamos con Preventa</h2>
+            <h1 class="titulo1">YA ESTAS A UN PASO MÁS CERCA DE TU PRODUCTO</h1>
+            <h2 class="titulo2">Recordá que trabajamos con Preventa</h2>
             <h2 class="preguntas">Preguntas frecuentes:</h2>
           </div>
-             <div class="row col-xl-8">
+             <div class="row col-xl-7">
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne"> <!-- hacer que cuando inicie la pag se encuentre cerrada-->
+                    <h3 class="accordion-header" id="headingOne">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                         ¿Qué es eso?
                         </button>
-                    </h2>
+                    </h3>
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <strong>Adquirís tu producto antes de que se fabrique.</strong> Con tu pago ayudas a la compra de los materiales que luego serán tu producto terminado.
@@ -96,11 +96,11 @@
                     </div>
                     </div>
                     <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
+                    <h3 class="accordion-header" id="headingTwo">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             ¿Y cuál es el beneficio de esto?
                         </button>
-                    </h2>
+                    </h3>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <p><strong>Que podrás diseñar y elegir tu producto.</strong> Será compeltamente personalizado para vos y se trabajará en un diseño único e irrepetible.</p>
@@ -110,11 +110,11 @@
                     </div>
                     </div>
                     <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
+                    <h3 class="accordion-header" id="headingThree">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                             ¿Cómo sé cuándo estará listo?
                         </button>
-                    </h2>
+                    </h3>
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             Deberás completar el formulario con los datos de tu compra, y así sabrás cuándo estará listo para retirar o enviar por motomensajería.
@@ -124,8 +124,10 @@
                 </div>
              </div>
         </article>
+
+
         <article>
-            <div class="row col-xl-8">
+            <div class="row col-xl-6 formul card" id="formulario">
                 <fieldset>
                     <div>
                         <h2 class="titulo">DATOS DE COMPRA</h2>
@@ -153,7 +155,7 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Ingresá la fecha en que adquiriste el producto:</label>
+                        <label for="exampleFormControlInput1" id="Compra" class="form-label">Ingresá la fecha en que adquiriste el producto:</label>
                         <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="00/00/0000">
                     </div>
                     <div class="mb-3">
@@ -161,12 +163,17 @@
                         <input type="date" class="form-control hoy" id="exampleFormControlInput1" placeholder="00/00/0000">
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <input class="btn btn-primary" type="submit" value="Calcular fecha">
+                        <input class="btn btn-primary calcular" type="submit" value="Calcular fecha">
                     </div>
                 </fieldset>
             </div>    
         </article>
         </section>
+
+        <aside id="tarjetas">
+            <!--Poner cards con DOM-->
+        </aside>
+
 
         <footer>
         <div class="contenedor-footer">
@@ -195,10 +202,14 @@
    <script src="https://kit.fontawesome.com/0ab5483adf.js" crossorigin="anonymous"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
-   <script src="/JS/codigo-calendario.js"></script>
+   <!--SWEET ALERT-->
+   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+   <!-- Luxon -->
+   <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.4/build/global/luxon.min.js"></script>
+
    <script src="/JS/objetos.js"></script>
-
-
+   <script src="/JS/codigo-calendario.js"></script>
 
 </body>
 </html>

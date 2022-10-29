@@ -187,7 +187,7 @@ box-sizing:border-box;
     display:block;
     margin-bottom:80px;
     width:550px;
-    height:420px;
+    height:450px;
     background:#fff;
     border-radius:5px;
     overflow:hidden;
@@ -259,7 +259,7 @@ box-sizing:border-box;
 
 button{
   display:inline-block;
-  width:252px;
+  width:240px;
   height:60px;
   margin-top:-10px;
   border:none;
@@ -292,12 +292,62 @@ button{
 }
 /* ---------------------------------------- CALENDARIO ---------------------------------------- */
 //falta darle estilo a todo
-h1{ 
-padding-top: 5%;
-margin-left: 2%
+
+.titulo1,
+.titulo2{
+  text-align: center;
+  color: #227C9D;
+  text-transform: uppercase;
+  margin-left: 5%;
+  padding-bottom: 0%;
+  font-family: 'Manrope';
+}
+
+.titulo1{
+  padding-top: 7%;
+  font-size: 2.5em;
+  font-weight: bolder;
+}
+.titulo2{
+  padding-top: 1%;
+}
+
+.preguntas{
+  font-weight: bold;
+  font-size: 1.4em;
+  margin-left: 5%;
+  padding-bottom: 1%;
+}
+
+.accordion-body{
+  font-family: "Montserrat";
+  font-weight: 500;
+}
+
+.accordion{
+margin-left: 10%;
+}
+
+#formulario{
+  margin-left: 25px;
+  margin-top: 5%, 
 }
 
 
+.form-control{
+  display:block;
+  height:40px;
+  margin:0 auto;
+  text-transform: lowercase;
+}
+
+.calcular{
+  width: 20%;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  height: 40px;
+  margin-bottom: 5%;
+}
 /* ------------------------------------------ IMPORT ------------------------------------------*/
 
 @import "desktop";

@@ -15,7 +15,7 @@ formulario.addEventListener("submit",(e) => {
             window.location.assign("calendario.html");
             break;
         }else{
-            alert("Usuario y/o contraseña erroneos! Restan "+(3-i)+" intentos.");
+            Swal.fire("Usuario y/o contraseña erroneos! Restan "+(3-i)+" intentos.") //ya no muestra la cantidad de intentos
         }
     }
 });
@@ -23,7 +23,7 @@ formulario.addEventListener("submit",(e) => {
 
 email.oninput = () => {
     if(isNaN(email.value)){
-        email.style.color="black";
+        email.style.color="#ffffff";
     }else{
         email.style.color="red";
     }
