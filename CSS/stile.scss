@@ -293,46 +293,58 @@ button{
 /* ---------------------------------------- CALENDARIO ---------------------------------------- */
 //falta darle estilo a todo
 
+.titul{
+  background: rgb(34,124,157);
+  background: linear-gradient(0deg, rgba(34,124,157,1) 0%, rgba(242,242,242,1) 88%);
+  padding-bottom: 5%;
+  padding-top: 5%;
+}
+
 .titulo1,
 .titulo2{
   text-align: center;
-  color: #227C9D;
   text-transform: uppercase;
   margin-left: 5%;
   padding-bottom: 0%;
-  font-family: 'Manrope';
+  font-family: 'Montserrat';
+  text-shadow: 3px 2px 3px rgba(131,121,121,0.76);
 }
 
 .titulo1{
   padding-top: 7%;
   font-size: 2.5em;
   font-weight: bolder;
+  color:#333333;
 }
 .titulo2{
   padding-top: 1%;
+  color: #fff;
 }
 
 .preguntas{
   font-weight: bold;
   font-size: 1.4em;
-  margin-left: 5%;
+  margin-left: 10%;
   padding-bottom: 1%;
 }
 
 .accordion-body{
-  font-family: "Montserrat";
+  font-family: "Manrope";
   font-weight: 500;
 }
 
 .accordion{
 margin-left: 10%;
+
 }
 
-#formulario{
+#form{
   margin-left: 25px;
-  margin-top: 5%, 
+  margin-top: 5%; 
+  box-shadow: 4px 4px 15px 2px rgba(59,58,58,0.8);
+ -webkit-box-shadow: 4px 4px 15px 2px rgba(59,58,58,0.8);
+ -moz-box-shadow: 4px 4px 15px 2px rgba(59,58,58,0.8);
 }
-
 
 .form-control{
   display:block;
