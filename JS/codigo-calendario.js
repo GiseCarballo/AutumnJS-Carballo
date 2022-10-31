@@ -49,9 +49,9 @@ function verTiempo(juegoAVisualizar){
 //function calcularFecha ()
 
 let opcion = document.getElementsByTagName("option");
-
-
 const DateTime = luxon.DateTime
+
+
 //const fechaCompra = DateTime.now(document.getElementById("Compra"))
 //const fechaListo = fechaCompra.plus({days:10});
 
