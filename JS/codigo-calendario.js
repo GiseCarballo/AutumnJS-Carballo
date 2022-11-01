@@ -1,19 +1,20 @@
 // Todo el codigo de calendario.html
 
+
 //cards
 let tarjeta = document.getElementById("tarjetas");
 
 function crearTarjetas(){
   for(const juego of juegos){
-    let tarjeta = document.createElement("div");
+    const tarjeta = document.createElement("div");
     tarjeta.className="card col-md-2";
     tarjeta.innerHTML = `
         <div class="row card-body">
-            <img src=${juego.foto} class="card-img-top" alt="${juego.nombre}">
+            <img src=../assets/${juego.foto} class="card-img-top" alt="${juego.nombre}">
             <div class="card-body">
                 <h5 class="card-title">${juego.nombre}</h5>
                 <p class="card-text">Código: ${juego.id}</p>
-                <button id='btn${juego.dias}' class="btn btn-primary">Ver tiempo</a>
+                <button id='btn${juego.dias}' class="btn btn-primary">Ver tiempo</button>
             </div>
         </div>
     `;
@@ -44,6 +45,26 @@ function verTiempo(juegoAVisualizar){
 }
 
 
+// VALINDANDO FORMULARIO
+
+
+const nombreUsuario = document.getElementsByClassName("nombre");
+const productos = document.getElementsByClassName("seleccionadorProd");
+const fecha = document.getElementsByClassName("fecha");
+
+function enviarFormulario (){
+    if (nombreUsuario.value === null || nombreUsuario.value === ""){
+        console.log("No ingresó su nombre");
+    }
+    if (productos.value === null || productos.value === ""){
+        console.log("No seleccionó un producto");
+    }
+    if (fecha.value === null || fecha.value === ""){
+        console.log("No ingresó fecha");
+    }
+    return false;
+};
+
 
 // Funcion del boton "Calcular fecha" - trabajar con Luxon e imput de fecha + juego.dias
 //function calcularFecha ()
@@ -53,7 +74,7 @@ const DateTime = luxon.DateTime
 
 
 //const fechaCompra = DateTime.now(document.getElementById("Compra"))
-//const fechaListo = fechaCompra.plus({days:10});
+//const fechaListo = fechaCompra.plus(${juego.dias});
 
 
 //usar fromISO para .value de las fechas del input

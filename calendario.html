@@ -134,11 +134,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Nombre:</label>
-                        <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Tu nombre">
+                        <input type="name" class="form-control nombre" id="exampleFormControlInput1" placeholder="Tu nombre">
                     </div>
                     <div>
                         <label for="Producto">Producto el producto que adquiriste:</label>
-                        <select class="form-select" aria-label="Default select example">
+                        <select class="form-select seleccionadorProd" aria-label="Default select example">
                             <option selected>Productos:</option>
                             <option value="Bloques">Bloques</option>
                             <option value="Cajón con 12 cubos">Cajón con 12 cubos</option>
@@ -156,10 +156,10 @@
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" id="Compra" class="form-label">Ingresá la fecha en que adquiriste el producto:</label>
-                        <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="00/00/0000">
+                        <input type="date" class="form-control fecha" id="exampleFormControlInput1" placeholder="00/00/0000">
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <input class="btn btn-primary calcular" type="submit" value="Calcular fecha">
+                        <input class="btn btn-primary calcular" type="submit" onclick="enviarFormulario()" value="Calcular fecha">
                     </div>
                 </fieldset>
             </div>    

@@ -6,7 +6,7 @@ const juegos = [{
     precio: 999,
     dias: 10,
     tipo: "Bloques",
-    foto: "/assets/Card-bloques.jpg",
+    foto: "Card-bloques.jpg",
 },
 {
     id: "b002",
@@ -14,7 +14,7 @@ const juegos = [{
     precio: 2500,
     dias: 15,
     tipo: "Bloques",
-    foto: "/assets/Card-Cajonbloques.jpg",
+    foto: "Card-Cajonbloques.jpg",
 },
 {
     id:"b003",
@@ -22,7 +22,7 @@ const juegos = [{
     precio: 3500,
     dias: 20,
     tipo: "Bloques",
-    foto: '/assets/Card-bloquescolores.jpg'
+    foto: 'Card-bloquescolores.jpg'
 },
 {
     id:"i001",
@@ -30,7 +30,7 @@ const juegos = [{
     precio: 1500,
     dias: 10,
     tipo: "Ingenio",
-    foto: '/assets/Card-cubo.jpg'
+    foto: 'Card-cubo.jpg'
 },
 {
     id: "i002",
@@ -38,7 +38,7 @@ const juegos = [{
     precio: 1700,
     dias: 15,
     tipo: "Ingenio",
-    foto: "/assets/Card-tangram.jpg"
+    foto: "Card-tangram.jpg"
 },
 {
     id: "i003",
@@ -46,7 +46,7 @@ const juegos = [{
     precio: 1300,
     dias: 10,
     tipo: "Ingenio",
-    foto: "/assets/Card-Dominó.jpg"
+    foto: "Card-Dominó.jpg"
 },
 {
     id: "e001",
@@ -54,7 +54,7 @@ const juegos = [{
     precio: 2000,
     dias: 10,
     tipo: "Encastre",
-    foto: "/assets/Card-numero.png",
+    foto: "Card-numero.png",
 },
 {
     id: "e002",
@@ -62,7 +62,7 @@ const juegos = [{
     precio: 2500,
     dias: 15,
     tipo: "Encastre",
-    foto: "/assets/Card-geometrica.jpg",
+    foto: "Card-geometrica.jpg",
 },
 {
     id: "e003",
@@ -70,7 +70,7 @@ const juegos = [{
     precio: 2300,
     dias: 10,
     tipo: "Encastre",
-    foto: "/assets/Card-encastrecuadrado.jpg",   
+    foto: "Card-encastrecuadrado.jpg",   
 },
 {
     id: "j001",
@@ -78,7 +78,7 @@ const juegos = [{
     precio: 3500,
     dias: 20,
     tipo: "Juguetes",
-    foto: "/assets/Card-Tren.jpg",
+    foto: "Card-Tren.jpg",
 },
 {
     id: "j002",
@@ -86,7 +86,7 @@ const juegos = [{
     precio: 3500,
     dias: 20,
     tipo: "Juguetes",
-    foto: "/assets/Card-Tractor.jpg",
+    foto: "Card-Tractor.jpg",
 },
 {
     id: "j003",
@@ -94,31 +94,13 @@ const juegos = [{
     precio: 3500,
     dias: 20, 
     tipo: "Jueguetes",
-    foto: "/assets/Card-avion.jpg"
+    foto: "Card-avion.jpg"
 }
 ]
 
 console.log(juegos.length);
 
+//JSON
 
-/*for (const juego of Juego){
-    console.log(Juego.nombre+" "+Juego.tiempo)
-}
-
-const produccionMenor = Juego.filter((juego) => Juego.tiempo.includes ('10 días'));
-console.log(produccionMenor);
-
-const produccionMedia = Juego.filter((juego) => Juego.tiempo.includes ('15 días'));
-console.log(produccionMedia);
-
-const produccionMayor = Juego.filter((juego) => Juego.tiempo.includes ('20 días'));
-console.log(produccionMayor);
-
-
-
-// Fechas
-
-let hoy = document.getElementsByClassName("hoy");
-console.log(hoy[0].innerText);
-hoy[0].innerText = new Date().toLocaleDateString();
-*/
+const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };
+guardarLocal("listaJuegos", JSON.stringify(juegos));
