@@ -5,33 +5,28 @@
 let tarjeta = document.getElementById("tarjetas");
 
 function crearTarjetas(){
-  for(const juego of juegos){
-    const tarjeta = document.createElement("div");
-    tarjeta.className="card col-md-2";
-    tarjeta.innerHTML = `
-        <div class="row card-body">
-            <img src=../assets/${juego.foto} class="card-img-top" alt="${juego.nombre}">
-            <div class="card-body">
-                <h5 class="card-title">${juego.nombre}</h5>
-                <p class="card-text">Código: ${juego.id}</p>
-                <button id='btn${juego.dias}' class="btn btn-primary">Ver tiempo</button>
+    juegos.forEach(juego => {
+        const tarjetaDiv = document.createElement("div");
+        tarjetaDiv.className="card col-md-2";
+        tarjetaDiv.innerHTML = `
+            <div class="row card-body">
+                <img src=../assets/${juego.foto} class="card-img-top" alt="${juego.nombre}">
+                <div class="card-body">
+                    <h5 class="card-title">${juego.nombre}</h5>
+                    <p class="card-text">Código: ${juego.id}</p>
+                    <button id='btn${juego.dias}' class="btn btn-primary">Ver tiempo</button>
+                </div>
             </div>
-        </div>
-    `;
+        `;
+        tarjeta.append(tarjetaDiv);
+  
+}) 
 }
-}
+
 
 crearTarjetas();
 
 //EVENTOS
-    juegos.forEach((juego)=>{
-        document.getElementById(`btn${juego.dias}`).addEventListener("click",function(){
-            verTiempo(juego);
-        });
-    });
-
-
-
 //Sweet Alert
 function verTiempo(juegoAVisualizar){
     Swal.fire({
@@ -43,6 +38,14 @@ function verTiempo(juegoAVisualizar){
             imageAlt: juegoAVisualizar.nombre,
           })
 }
+
+
+juegos.forEach((juego)=>{
+    document.getElementById(`btn${juego.dias}`).addEventListener("click",function(){
+        verTiempo(juego);
+    });
+});
+
 
 
 // VALINDANDO FORMULARIO

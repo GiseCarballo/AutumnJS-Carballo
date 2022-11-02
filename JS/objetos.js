@@ -6,7 +6,7 @@ const juegos = [{
     precio: 999,
     dias: 10,
     tipo: "Bloques",
-    foto: "Card-bloques.jpg",
+    foto: "../assets/Card-bloques.jpg",
 },
 {
     id: "b002",
@@ -14,7 +14,7 @@ const juegos = [{
     precio: 2500,
     dias: 15,
     tipo: "Bloques",
-    foto: "Card-Cajonbloques.jpg",
+    foto: "../assets/Card-Cajonbloques.jpg",
 },
 {
     id:"b003",
@@ -22,7 +22,7 @@ const juegos = [{
     precio: 3500,
     dias: 20,
     tipo: "Bloques",
-    foto: 'Card-bloquescolores.jpg'
+    foto: '../assets/Card-bloquescolores.jpg'
 },
 {
     id:"i001",
@@ -30,7 +30,7 @@ const juegos = [{
     precio: 1500,
     dias: 10,
     tipo: "Ingenio",
-    foto: 'Card-cubo.jpg'
+    foto: '../assets/Card-cubo.jpg'
 },
 {
     id: "i002",
@@ -38,7 +38,7 @@ const juegos = [{
     precio: 1700,
     dias: 15,
     tipo: "Ingenio",
-    foto: "Card-tangram.jpg"
+    foto: "../assets/Card-tangram.jpg"
 },
 {
     id: "i003",
@@ -46,7 +46,7 @@ const juegos = [{
     precio: 1300,
     dias: 10,
     tipo: "Ingenio",
-    foto: "Card-Dominó.jpg"
+    foto: "../assets/Card-Dominó.jpg"
 },
 {
     id: "e001",
@@ -54,7 +54,7 @@ const juegos = [{
     precio: 2000,
     dias: 10,
     tipo: "Encastre",
-    foto: "Card-numero.png",
+    foto: "../assets/Card-numero.png",
 },
 {
     id: "e002",
@@ -62,7 +62,7 @@ const juegos = [{
     precio: 2500,
     dias: 15,
     tipo: "Encastre",
-    foto: "Card-geometrica.jpg",
+    foto: "../assets/Card-geometrica.jpg",
 },
 {
     id: "e003",
@@ -70,7 +70,7 @@ const juegos = [{
     precio: 2300,
     dias: 10,
     tipo: "Encastre",
-    foto: "Card-encastrecuadrado.jpg",   
+    foto: "../assets/Card-encastrecuadrado.jpg",   
 },
 {
     id: "j001",
@@ -78,7 +78,7 @@ const juegos = [{
     precio: 3500,
     dias: 20,
     tipo: "Juguetes",
-    foto: "Card-Tren.jpg",
+    foto: "../assets/Card-Tren.jpg",
 },
 {
     id: "j002",
@@ -86,7 +86,7 @@ const juegos = [{
     precio: 3500,
     dias: 20,
     tipo: "Juguetes",
-    foto: "Card-Tractor.jpg",
+    foto: "../assets/Card-Tractor.jpg",
 },
 {
     id: "j003",
@@ -94,7 +94,7 @@ const juegos = [{
     precio: 3500,
     dias: 20, 
     tipo: "Jueguetes",
-    foto: "Card-avion.jpg"
+    foto: "../assets/Card-avion.jpg"
 }
 ]
 
