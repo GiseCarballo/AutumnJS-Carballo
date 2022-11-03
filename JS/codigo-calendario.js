@@ -7,27 +7,24 @@ let tarjeta = document.getElementById("tarjetas");
 function crearTarjetas(){
     juegos.forEach(juego => {
         const tarjetaDiv = document.createElement("div");
-        tarjetaDiv.className="card col-md-2";
+        tarjetaDiv.className="card col-sm-2 cardJuegos";
         tarjetaDiv.innerHTML = `
-            <div class="row card-body">
                 <img src=../assets/${juego.foto} class="card-img-top" alt="${juego.nombre}">
-                <div class="card-body">
+            <div class="card-body">
                     <h5 class="card-title">${juego.nombre}</h5>
                     <p class="card-text">Código: ${juego.id}</p>
-                    <button id='btn${juego.dias}' class="btn btn-primary">Ver tiempo</button>
-                </div>
+                    <button id='btn${juego.dias}' class="btn botonTiempo">Ver tiempo</button>
             </div>
         `;
         tarjeta.append(tarjetaDiv);
   
 }) 
 }
-
-
 crearTarjetas();
 
 //EVENTOS
 //Sweet Alert
+
 function verTiempo(juegoAVisualizar){
     Swal.fire({
             title: juegoAVisualizar.nombre,
@@ -51,9 +48,9 @@ juegos.forEach((juego)=>{
 // VALINDANDO FORMULARIO
 
 
-const nombreUsuario = document.getElementsByClassName("nombre");
-const productos = document.getElementsByClassName("seleccionadorProd");
-const fecha = document.getElementsByClassName("fecha");
+const nombreUsuario = document.getElementById("nombre");
+const productos = document.getElementById("seleccionadorProd");
+const fechaCompra = document.getElementById("fecha");
 
 function enviarFormulario (){
     if (nombreUsuario.value === null || nombreUsuario.value === ""){
@@ -62,11 +59,18 @@ function enviarFormulario (){
     if (productos.value === null || productos.value === ""){
         console.log("No seleccionó un producto");
     }
-    if (fecha.value === null || fecha.value === ""){
+    if (fechaCompra.value === null || fechaCompra.value === ""){
         console.log("No ingresó fecha");
     }
     return false;
 };
+
+window.addEventListener('load', function () {
+    fechaCompra.addEventListener('change', function (){
+        console.log(this.value);
+    });
+});
+
 
 
 // Funcion del boton "Calcular fecha" - trabajar con Luxon e imput de fecha + juego.dias

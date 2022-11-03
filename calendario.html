@@ -74,13 +74,14 @@
           </nav>
         </header>
 
-        <section>
-        <article>
-          <div class="titul">
+        <div class="titul">
             <h1 class="titulo1">YA ESTAS A UN PASO MÁS CERCA DE TU PRODUCTO</h1>
             <h2 class="titulo2">Proceso de Preventa</h2>
-          </div>
-             <div class="row col-xl-7">
+        </div>
+
+        <section>
+        <article>
+             <div class="col-xl-6 card" id="pregFrec">
                 <h2 class="preguntas">Preguntas frecuentes:</h2>
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
@@ -126,19 +127,18 @@
         </article>
 
 
-        <article>
-            <div class="row col-xl-6 formul card" id="form">
-                <fieldset>
+            <div>
+                <fieldset  class="row col-xl-6 formul card" id="form">
                     <div>
                         <h2 class="titulo">DATOS DE COMPRA</h2>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Nombre:</label>
-                        <input type="name" class="form-control nombre" id="exampleFormControlInput1" placeholder="Tu nombre">
+                        <input type="name" class="form-control" id="nombre" placeholder="Tu nombre">
                     </div>
                     <div>
                         <label for="Producto">Producto el producto que adquiriste:</label>
-                        <select class="form-select seleccionadorProd" aria-label="Default select example">
+                        <select class="form-select" id="seleccionadorProd" aria-label="Default select example">
                             <option selected>Productos:</option>
                             <option value="Bloques">Bloques</option>
                             <option value="Cajón con 12 cubos">Cajón con 12 cubos</option>
@@ -156,20 +156,21 @@
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" id="Compra" class="form-label">Ingresá la fecha en que adquiriste el producto:</label>
-                        <input type="date" class="form-control fecha" id="exampleFormControlInput1" placeholder="00/00/0000">
+                        <input type="date" class="form-control" id="fecha" placeholder="00/00/0000">
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <input class="btn btn-primary calcular" type="submit" onclick="enviarFormulario()" value="Calcular fecha">
                     </div>
                 </fieldset>
             </div>    
-        </article>
+
         </section>
 
-        <aside id="tarjetas">
-            <!--Poner cards con DOM-->
-        </aside>
+        <div>
+            <div id="tarjetas" class="row">
 
+            </div>
+        </div>
 
         <footer>
         <div class="contenedor-footer">
