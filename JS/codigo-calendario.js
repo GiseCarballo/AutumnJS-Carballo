@@ -46,18 +46,48 @@ function verTiempo(juegoAVisualizar){
 
 
 
+
+// SELECT// 
+
+
+const selectProd = document.getElementById("selectProd");
+
+function seleccionarProd (){
+    juegos.forEach(juegoSelect => {
+        selectProd.innerHTML += `
+            <option value="">Seleccionar un juego</option>
+            <option value="${juegoSelect.id}" id="seleccionadorProd${juegoSelect.id}">${juegoSelect.nombre}</option>
+        `;
+        selectProd.append();
+    });
+
+
+}
+seleccionarProd();
+
+
+//ONSUBMIT
+/*
+- Escuchar el submit del formulario con un onSubmit.
+- En ese momento, necesitamos obtener 1. el value del producto seleccionado en el select de productos, con su ID.
+-También necesitamos la fecha, como objeto Date.
+-Con el ID del producto, buscamos con un find el producto en tu lista de juegos y obtenemos la demora del envío.
+-Utilizamos la función que te pasé para sumarle esa cantidad de días a la fecha que ingresó el usuario y listo, tendríamos la fecha estimada de envío.
+-Entonces obtenemos ese ID del value, iteramos sobre el array de objetos, cuando coincide el ID del FORM con el ID del producto, devolvemos los días de demora.
+
+*/
+
+
 // VALINDANDO FORMULARIO
-
-
 const nombreUsuario = document.getElementById("nombre");
-const select = document.getElementById("seleccionadorProd");
+const opcionElegida = document.getElementById("selectProd");
 const fechaCompra = document.getElementById("fecha");
 
 function enviarFormulario (){
     if (nombreUsuario.value === null || nombreUsuario.value === ""){
         console.log("No ingresó su nombre");
     }
-    if (select.value === null || select.value === ""){
+    if (opcionElegida.value === null || opcionElegida.value === ""){
         console.log("No seleccionó un producto");
     }
     if (fechaCompra.value === null || fechaCompra.value === ""){
@@ -74,25 +104,18 @@ window.addEventListener('load', function () {
 
 
 
-// Funcion del boton "Calcular fecha" - trabajar con Luxon e imput de fecha + juego.dias
+//Funcion del boton "Calcular fecha" - trabajar con Luxon e imput de fecha + juego.dias
 //function calcularFecha ()
 
 
-const DateTime = luxon.DateTime
-const dur10 = Duration.fromObject ({ days:10 });
-const dur15  = Duration.fromObject ({ days:15 });
-const dur20 = Duration.fromObject ({ days:20 });
+const plazosDeEntregas = [10, 15, 20]
 
-function calcularFecha (
+plazosDeEntregas.forEach(plazo => {
 
-)
+     // acá deberías modelar una option con el value "plazo" y agregarla dentro de un select
 
+})
 
-const fechaListo = fechaCompra.plus(dur10);
-console.log(suma.toLocaleString(DateTime.DATE_SHORT))
-
-//const fechaCompra = DateTime.now(document.getElementById("Compra"))
-//const fechaListo = fechaCompra.plus(${juego.dias});
 
 
 //usar fromISO para .value de las fechas del input
