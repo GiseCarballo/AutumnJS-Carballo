@@ -45,17 +45,13 @@ function verTiempo(juegoAVisualizar){
 }
 
 
-
-
-// SELECT// 
-
-
+// SELECT
 const selectProd = document.getElementById("selectProd");
 
 function seleccionarProd (){
+    selectProd.innerHTML = '<option value="">Seleccionar un juego</option>';
     juegos.forEach(juegoSelect => {
         selectProd.innerHTML += `
-            <option value="">Seleccionar un juego</option>
             <option value="${juegoSelect.id}" id="seleccionadorProd${juegoSelect.id}">${juegoSelect.nombre}</option>
         `;
         selectProd.append();
@@ -79,18 +75,22 @@ seleccionarProd();
 
 
 // VALINDANDO FORMULARIO
+
 const nombreUsuario = document.getElementById("nombre");
 const opcionElegida = document.getElementById("selectProd");
 const fechaCompra = document.getElementById("fecha");
 
-function enviarFormulario (){
+function enviarFormulario (e){
     if (nombreUsuario.value === null || nombreUsuario.value === ""){
+        e.preventDefault();
         console.log("No ingresó su nombre");
     }
     if (opcionElegida.value === null || opcionElegida.value === ""){
+        e.preventDefault();
         console.log("No seleccionó un producto");
     }
     if (fechaCompra.value === null || fechaCompra.value === ""){
+        e.preventDefault();
         console.log("No ingresó fecha");
     }
     return false;
@@ -103,18 +103,37 @@ window.addEventListener('load', function () {
 });
 
 
+//ON SUBMIT
 
-//Funcion del boton "Calcular fecha" - trabajar con Luxon e imput de fecha + juego.dias
-//function calcularFecha ()
+let miBoton = document.getElementById("miBoton");
+
+const formulario = document.getElementById("formulario");
 
 
-const plazosDeEntregas = [10, 15, 20]
+formulario.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const idSolicitado = opcionElegida.options[opcionElegida.selectedIndex].value;
+    const productoSolicitado = juegos.find((juego) => juego.id == idSolicitado);
+    
+});
+
+
+
+
+
+
+
+
+
+
+
+/*const plazosDeEntregas = [10, 15, 20]
 
 plazosDeEntregas.forEach(plazo => {
 
      // acá deberías modelar una option con el value "plazo" y agregarla dentro de un select
 
-})
+})*/
 
 
 
