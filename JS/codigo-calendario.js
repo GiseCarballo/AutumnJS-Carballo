@@ -61,14 +61,6 @@ function seleccionarProd (){
 seleccionarProd();
 
 
-//ONSUBMIT
-/*
--Utilizamos la función que te pasé para sumarle esa cantidad de días a la fecha que ingresó el usuario y listo, tendríamos la fecha estimada de envío.
--Entonces obtenemos ese ID del value, iteramos sobre el array de objetos, cuando coincide el ID del FORM con el ID del producto, devolvemos los días de demora.
-
-*/
-
-
 // VALINDANDO FORMULARIO
 
 const nombreUsuario = document.getElementById("nombre");
@@ -76,20 +68,18 @@ const opcionElegida = document.getElementById("selectProd");
 const fechaCompra = document.getElementById("fecha");
 
 function enviarFormulario (e){
-    if (nombreUsuario.value === null || nombreUsuario.value === ""){
-        e.preventDefault();
-        console.log("No ingresó un nombre");
+    if (nombreUsuario.value === null || nombreUsuario.value === "" || nombreUsuario.length <= 30 || nombreUsuario.value === ([0-9])){
+        console.log("No ingresó un nombre correctamente");
     }
     if (opcionElegida.value === null || opcionElegida.value === ""){
-        e.preventDefault();
         console.log("No seleccionó un producto");
     }
     if (fechaCompra.value === null || fechaCompra.value === ""){
-        e.preventDefault();
         console.log("No ingresó fecha");
     }
     return false;
 };
+
 
 window.addEventListener('load', function () {
     fechaCompra.addEventListener('change', function (){
@@ -98,15 +88,15 @@ window.addEventListener('load', function () {
 });
 
 
+
 //ON SUBMIT
 //Escuchar el select y la fecha para poder trabajar en la función para calcular la fecha.
-
-let miBoton = document.getElementById("miBoton");
 
 const formulario = document.getElementById("formulario");
 
     formulario.addEventListener("submit", (e) => {  
-        e.preventDefault(); //Para que no se recargue la página
+        e.preventDefault(); enviarFormulario(); //Para que no se recargue la página
+
         const idSolicitado = opcionElegida.options[opcionElegida.selectedIndex].value;
         const productoSolicitado = juegos.find((juego) => juego.id == idSolicitado);
        
@@ -144,30 +134,21 @@ function obtenerComentarios(){
             comentarioDiv.className="card";
             document.getElementById("comentarios").innerHTML +=`
             <div class="card-header">
-              Experiencias de compras!
+              Algunas experiencias de compras!
             </div>`;
 
-            comentarios.forEach((comentarioDeUsuario)=>{
+            const aleatorio = comentarios[Math.floor(Math.random()*comentarios.length)];
+            console.log(aleatorio); //Para chequear si aparece aleatoriamente
 
-                document.getElementById("comentarios").innerHTML +=`
+            document.getElementById("comentarios").innerHTML +=`
                 <div class="card-body">
                   <blockquote class="blockquote mb-0">
-                    <p>${comentarioDeUsuario.body}</p>
-                    <footer class="blockquote-footer">${comentarioDeUsuario.email}</footer>
+                    <p>${aleatorio.body}</p>
+                    <footer class="blockquote-footer">${aleatorio.email}</footer>
                   </blockquote>
                 </div>
-              </div>
-                `;
-                return (Math.round(Math.random(comentarioDeUsuario.id) * 500 + 1));                
-            })
-
-            console.log(comentarios)
-
-        });
+            </div>
+            `;                
+        })
 };
-
 obtenerComentarios();
-
-/*
-            
-*/
