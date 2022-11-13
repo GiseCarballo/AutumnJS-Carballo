@@ -111,28 +111,26 @@ const formulario = document.getElementById("formulario");
         const productoSolicitado = juegos.find((juego) => juego.id == idSolicitado);
        
         let date = new Date(fechaCompra.valueAsDate.getTime());
-        date.setDate(date.getDate() + productoSolicitado.dias);
-        console.log(date);
+        date.setDate(date.getDate() + productoSolicitado.dias); //sin el +1 no queda
+        console.log(date.toLocaleDateString());
 
-      
-
+        //pruebas
         console.log(productoSolicitado.dias); //para chequear si ve los días que tarda
+        console.log(date.getDate() + productoSolicitado.dias); //chequear suma
+        console.log(date.getDate()); //es 1 menos
+        console.log(fechaCompra.valueAsDate.getTime()); //Valor en milisegundos. Tiene que ver con que me de un día menos? El problema es por el horario
 
         Swal.fire({
             icon: 'success',
-            text: 'Tu producto estará listo el '+date,
+            title: 'Tu producto estará listo el '+date.toLocaleDateString(),
+            text: 'Comunicate con nosotros para coordinar la entrega!'
         })
     
-
-    CalcularFecha();
-
 });
 
 
 // FETCH
-
 let comentarios=[];
-
 
 function obtenerComentarios(){
     const URLGET='https://jsonplaceholder.typicode.com/comments';
@@ -143,15 +141,15 @@ function obtenerComentarios(){
             let comentarios = data;
 
             const comentarioDiv = document.createElement("div");
-            comentarioDiv.className="coment";
-            document.getElementById("comentarios").innerHTML +=`<div class="card">
+            comentarioDiv.className="card";
+            document.getElementById("comentarios").innerHTML +=`
             <div class="card-header">
               Experiencias de compras!
             </div>`;
 
             comentarios.forEach((comentarioDeUsuario)=>{
-              //  console.log(Math.round(Math.random(comentarioDeUsuario.id) * 500 + 1));
-                /*document.getElementById("comentarios").innerHTML +=`
+
+                document.getElementById("comentarios").innerHTML +=`
                 <div class="card-body">
                   <blockquote class="blockquote mb-0">
                     <p>${comentarioDeUsuario.body}</p>
@@ -159,9 +157,11 @@ function obtenerComentarios(){
                   </blockquote>
                 </div>
               </div>
-                `;*/
-
+                `;
+                return (Math.round(Math.random(comentarioDeUsuario.id) * 500 + 1));                
             })
+
+            console.log(comentarios)
 
         });
 };
