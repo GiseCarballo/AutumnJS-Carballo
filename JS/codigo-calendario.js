@@ -109,15 +109,12 @@ const formulario = document.getElementById("formulario");
         e.preventDefault(); //Para que no se recargue la página
         const idSolicitado = opcionElegida.options[opcionElegida.selectedIndex].value;
         const productoSolicitado = juegos.find((juego) => juego.id == idSolicitado);
-        let date;
        
-        function CalcularFecha(){
         let date = new Date(fechaCompra.valueAsDate.getTime());
         date.setDate(date.getDate() + productoSolicitado.dias);
-        return date;  
-        };
-
         console.log(date);
+
+      
 
         console.log(productoSolicitado.dias); //para chequear si ve los días que tarda
 
@@ -153,7 +150,8 @@ function obtenerComentarios(){
             </div>`;
 
             comentarios.forEach((comentarioDeUsuario)=>{
-                document.getElementById("comentarios").innerHTML +=`
+              //  console.log(Math.round(Math.random(comentarioDeUsuario.id) * 500 + 1));
+                /*document.getElementById("comentarios").innerHTML +=`
                 <div class="card-body">
                   <blockquote class="blockquote mb-0">
                     <p>${comentarioDeUsuario.body}</p>
@@ -161,13 +159,10 @@ function obtenerComentarios(){
                   </blockquote>
                 </div>
               </div>
-                `;
-                //console.log(Math.round(Math.random(comentarioDeUsuario.id) * 500 + 1));
+                `;*/
+
             })
 
-            
-            
-            
         });
 };
 
