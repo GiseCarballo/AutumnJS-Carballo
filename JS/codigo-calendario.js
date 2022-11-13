@@ -1,5 +1,8 @@
 // Todo el codigo de calendario.html
 
+//Luxon
+const DateTime = luxon.DateTime;
+
 
 //CARDS - Tarjetas informativas para que el cliente sepa cuándo tarda cada producto.
 let tarjeta = document.getElementById("tarjetas");
@@ -104,41 +107,72 @@ const formulario = document.getElementById("formulario");
 
     formulario.addEventListener("submit", (e) => {  
         e.preventDefault(); //Para que no se recargue la página
-        const idSolicitado =
-        opcionElegida.options[opcionElegida.selectedIndex].value;
+        const idSolicitado = opcionElegida.options[opcionElegida.selectedIndex].value;
         const productoSolicitado = juegos.find((juego) => juego.id == idSolicitado);
-       
+        let date;
        
         function CalcularFecha(){
         let date = new Date(fechaCompra.valueAsDate.getTime());
         date.setDate(date.getDate() + productoSolicitado.dias);
-        return date; //Acá debería haber un Sweet Alert que diga "Tu producto estará listo el NuevaFecha"
+        return date;  
         };
+
+        console.log(date);
+
         console.log(productoSolicitado.dias); //para chequear si ve los días que tarda
 
+        Swal.fire({
+            icon: 'success',
+            text: 'Tu producto estará listo el '+date,
+        })
+    
 
-        CalcularFecha();
-    });
+    CalcularFecha();
 
-
-
-
-
-
-
-
+});
 
 
+// FETCH
 
-/*const plazosDeEntregas = [10, 15, 20]
-
-plazosDeEntregas.forEach(plazo => {
-
-     // acá deberías modelar una option con el value "plazo" y agregarla dentro de un select
-
-})*/
+let comentarios=[];
 
 
+function obtenerComentarios(){
+    const URLGET='https://jsonplaceholder.typicode.com/comments';
+    fetch(URLGET)
+        .then(resultado => resultado.json())
+        .then(data =>{
+            console.log(data);
+            let comentarios = data;
 
-//usar fromISO para .value de las fechas del input
+            const comentarioDiv = document.createElement("div");
+            comentarioDiv.className="coment";
+            document.getElementById("comentarios").innerHTML +=`<div class="card">
+            <div class="card-header">
+              Experiencias de compras!
+            </div>`;
 
+            comentarios.forEach((comentarioDeUsuario)=>{
+                document.getElementById("comentarios").innerHTML +=`
+                <div class="card-body">
+                  <blockquote class="blockquote mb-0">
+                    <p>${comentarioDeUsuario.body}</p>
+                    <footer class="blockquote-footer">${comentarioDeUsuario.email}</footer>
+                  </blockquote>
+                </div>
+              </div>
+                `;
+                //console.log(Math.round(Math.random(comentarioDeUsuario.id) * 500 + 1));
+            })
+
+            
+            
+            
+        });
+};
+
+obtenerComentarios();
+
+/*
+            
+*/
