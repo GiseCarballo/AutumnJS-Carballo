@@ -44,8 +44,8 @@ function verTiempo(juegoAVisualizar){
 };
 
 // SELECT
-// Armar un select que esté asociado directamente con los objetos del array para luego generar la función de CalcularFecha,
-//y para que se modifique cada vez que sea necesario modificar el array.
+// Armar un select que esté asociado directamente con los objetos del array para luego CalcularFecha,
+//y para que se modifique la lista cada vez que sea necesario modificar el array.
 
 const selectProd = document.getElementById("selectProd");
 
@@ -68,18 +68,28 @@ const opcionElegida = document.getElementById("selectProd");
 const fechaCompra = document.getElementById("fecha");
 
 function enviarFormulario (e){
-    if (nombreUsuario.value === null || nombreUsuario.value === "" || nombreUsuario.length <= 30 || nombreUsuario.value === ([0-9])){
+    if (nombreUsuario.value === null || nombreUsuario.value === "" || nombreUsuario.length <= 30){
         console.log("No ingresó un nombre correctamente");
+        return false;
     }
     if (opcionElegida.value === null || opcionElegida.value === ""){
         console.log("No seleccionó un producto");
+        return false;
     }
     if (fechaCompra.value === null || fechaCompra.value === ""){
         console.log("No ingresó fecha");
+        return false;
     }
-    return false;
+    return true
 };
 
+nombreUsuario.oninput = () => {
+    if(isNaN(nombreUsuario.value)){
+        nombreUsuario.style.color="black";
+    }else{
+        nombreUsuario.style.color="red";
+    }
+}
 
 window.addEventListener('load', function () {
     fechaCompra.addEventListener('change', function (){
@@ -89,26 +99,26 @@ window.addEventListener('load', function () {
 
 
 
-//ON SUBMIT
+//CALCULAR FECHA
 //Escuchar el select y la fecha para poder trabajar en la función para calcular la fecha.
 
 const formulario = document.getElementById("formulario");
 
     formulario.addEventListener("submit", (e) => {  
-        e.preventDefault(); enviarFormulario(); //Para que no se recargue la página
+        e.preventDefault(); enviarFormulario();//Para que no se recargue la página
 
         const idSolicitado = opcionElegida.options[opcionElegida.selectedIndex].value;
         const productoSolicitado = juegos.find((juego) => juego.id == idSolicitado);
        
         let date = new Date(fechaCompra.valueAsDate.getTime());
-        date.setDate(date.getDate() + productoSolicitado.dias); //sin el +1 no queda
+        date.setDate(date.getDate() + productoSolicitado.dias +1); //sin el +1 no queda
         console.log(date.toLocaleDateString());
 
-        //pruebas
+        //Pruebas 
         console.log(productoSolicitado.dias); //para chequear si ve los días que tarda
         console.log(date.getDate() + productoSolicitado.dias); //chequear suma
         console.log(date.getDate()); //es 1 menos
-        console.log(fechaCompra.valueAsDate.getTime()); //Valor en milisegundos. Tiene que ver con que me de un día menos? El problema es por el horario
+        console.log(fechaCompra.valueAsDate.getTime()); //Valor en milisegundos
 
         Swal.fire({
             icon: 'success',
@@ -120,6 +130,8 @@ const formulario = document.getElementById("formulario");
 
 
 // FETCH
+// Comentarios de usuarios no reales.
+// Simula comentarios de usuarios que ha recibido la marca sobre la compra de estos productos.
 let comentarios=[];
 
 function obtenerComentarios(){
@@ -131,7 +143,7 @@ function obtenerComentarios(){
             let comentarios = data;
 
             const comentarioDiv = document.createElement("div");
-            comentarioDiv.className="card";
+            comentarioDiv.className="card tituloCompras";
             document.getElementById("comentarios").innerHTML +=`
             <div class="card-header">
               Algunas experiencias de compras!

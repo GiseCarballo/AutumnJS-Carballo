@@ -293,32 +293,60 @@ button{
 /* ---------------------------------------- CALENDARIO ---------------------------------------- */
 //falta darle estilo a todo
 
-.titul{
+.titul,
+.divtitul{
   background: rgb(34,124,157);
-  background: linear-gradient(0deg, rgba(34,124,157,1) 0%, rgba(242,242,242,1) 88%);
+}
+
+.titul{
   padding-bottom: 5%;
   padding-top: 5%;
+  background: linear-gradient(0deg, rgba(34,124,157,1) 0%, rgba(242,242,242,1) 88%);
+}
+
+.divtitul{
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  background: linear-gradient(0deg, rgba(34,124,157,1) 20%, rgba(50,200,255,1) 100%);
 }
 
 .titulo1,
-.titulo2{
+.titulo2,
+.titulo3,
+.titulo1-0{
   text-align: center;
   text-transform: uppercase;
-  margin-left: 5%;
   padding-bottom: 0%;
   font-family: 'Montserrat';
-  text-shadow: 3px 2px 3px rgba(131,121,121,0.76);
+  font-weight: bolder;
 }
 
-.titulo1{
-  padding-top: 7%;
-  font-size: 2.5em;
+.titulo1,
+.titulo1-0{
+  padding-top: 3%;
   font-weight: bolder;
   color:#333333;
+  text-shadow: 3px 2px 3px rgba(131,121,121,0.76);
 }
+.titulo1{
+  font-size: 3em;
+}
+.titulo1-0{
+  font-size: 2em;
+}
+
+
+
 .titulo2{
   padding-top: 1%;
   color: #fff;
+  font-size: 2em;
+}
+.titulo3{
+  color:#227C9D;
+  font-size: 2em;
 }
 
 .preguntas{
@@ -384,7 +412,8 @@ button{
   margin-top: 3%;
   margin-left: 8%;
   margin-right: 8%;
-  gap: 8px;
+  column-gap: 35px;
+  row-gap: 45px;
   justify-content: space-around;
 }
 
@@ -403,6 +432,16 @@ button{
   -moz-box-shadow: 4px 4px 15px 2px rgba(59,58,58,0.8);
 }
 
+.coment{
+  margin: auto;
+  margin-top: 5%;
+
+}
+
+.card-header{
+  background-color: #227C9D;
+  color: #fff;
+}
 /* ------------------------------------------ IMPORT ------------------------------------------*/
 
 @import "desktop";
