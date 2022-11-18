@@ -5,6 +5,7 @@
 let email = document.getElementById("email");
 let contrasenia = document.getElementById("pass");
 let formulario = document.getElementById("formulario");
+let textEmail = document.getElementById("textEmail");
 
 let intentos = 3; //inicio contador
 
@@ -25,23 +26,28 @@ formulario.addEventListener("submit", (e) => {
 // función para que el email contenga su estructura básica,
 //más allá de haberlo declarado en el simulador y que tenga que ser sí o sí ese.
 
+
 function validarEmail (){
-    let validacionDeEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/; //Puede contener signos y 
-    if(validacionDeEmail.test(email.value)){
-        console.log('Email escrito correctamente');
-		return true;
-	}else{
-		console.log('El Email contiene un error en su escritura');
-		return false;
-	}
-};   
+    let patronEmail = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/; //Puede contener signos y letras
+    let form = document.getElementById("formulario");
+
+    if (email.match(patronEmail)){
+        form.classList.add("valid");
+        form.classList.remove("invalid");
+        textEmail.innerHTML = "Tu email es válido";
+        textEmail.style.color = "#00ff00";
+    }else{
+        form.classList.remove("valid");
+        form.classList.add("invalid");
+        text.innerHTML = "Por favor ingrese un email válido";
+        text.style.color = "#ff0000";
+    }if(email == ""){
+        form.classList.remove("valid");
+        form.classList.remove("invalid");
+        textEmail.innerHTML = "";
+        textEmail.style.color = "#00ff00";
+    }
+};
 
 validarEmail();
 
-email.oninput = () => {
-    if(isNaN(email.value)){
-        email.style.color="black";
-    }else{
-        email.style.color="red";
-    }
-};

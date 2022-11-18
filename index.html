@@ -78,14 +78,15 @@
             <div class="container">
                 <div class="formulario">
                     <h2>Iniciar sesión</h2>
-                <form id="formulario">
-                    <input type="text" id="email" class="email" placeholder="email">
+                <form id="formulario" action="#">
+                    <input type="text" id="email" class="email" placeholder="Ingresar Email" onkeydown="validarEmail()">
+                    <span id="textEmail"></span>
                     <input type="text" id="pass" class="pwd" placeholder="contraseña">
                     <a href="#" class="link">¿Olvidaste tu contraseña?</a>
                     <button class="register">
                         <span>Registrate</span>
                     </button>
-                    <button id="signin" class="signin" type="submit" onclick="return validarEmail()">
+                    <button id="signin" class="signin" type="submit" onclick="return">
                         <span>iniciar Sesión</span>
                     </button>
                 </form>
