@@ -259,7 +259,7 @@ input:hover::placeholder, input:focus::placeholder, input:active:focus::placehol
 
 button {
   display: inline-block;
-  width: 240px;
+  width: 255px;
   height: 60px;
   margin-top: -10px;
   border: none;
@@ -289,6 +289,7 @@ button:hover span {
   display: block;
   color: #000;
   font-style: italic;
+  margin-left: 15%;
 }
 
 /* ---------------------------------------- CALENDARIO ---------------------------------------- */
