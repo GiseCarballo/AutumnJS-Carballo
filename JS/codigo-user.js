@@ -31,7 +31,7 @@ function validarEmail (){
     let patronEmail = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/; //Puede contener signos y letras
     let form = document.getElementById("formulario");
 
-    if (email.match(patronEmail)){
+    if (email.value.match(patronEmail)){
         form.classList.add("valid");
         form.classList.remove("invalid");
         textEmail.innerHTML = "Tu email es válido";
