@@ -39,8 +39,8 @@ function validarEmail (){
     }else{
         form.classList.remove("valid");
         form.classList.add("invalid");
-        text.innerHTML = "Por favor ingrese un email válido";
-        text.style.color = "#ff0000";
+        textEmail.innerHTML = "Por favor ingrese un email válido";
+        textEmail.style.color = "#ff0000";
     }if(email == ""){
         form.classList.remove("valid");
         form.classList.remove("invalid");
